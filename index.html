@@ -35,17 +35,17 @@
         </div>
         <div id="error"></div>
         <div class="submit-button">
-            <button id="submit">Зарегистрироваться</button>
+            <button id="regBtn">Зарегистрироваться</button>
         </div>
     </form>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let tg = window.Telegram.WebApp;
-        let submitBtn = document.getElementById("submit");
+        let tgAppReg = window.Telegram.WebApp;
+        let regBtn = document.getElementById("regBtn");
         tg.expand();
 
-        submitBtn.addEventListener("click", () => {
+        regBtn.addEventListener("click", () => {
             document.getElementById("error").innerText = "";
 
             let stud_num = document.getElementById("stud_num").value;
@@ -66,8 +66,8 @@
                 date_birth: date_birth
             }
 
-            tg.sendData(JSON.stringify(data));
-            tg.close();
+            tgAppReg.sendData(JSON.stringify(data));
+            tgAppReg.close();
         })
     </script>
 </body>
